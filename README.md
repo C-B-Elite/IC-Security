@@ -9,7 +9,7 @@
 * 取钱 500， 取钱函数不await，执行后返回
 
 ## 关键攻击漏洞：
-* 被攻击的函数（block_func）内对全局变量使用了一份先前状态的copy（preVal）， 导致出问题 
+* 被攻击的函数（block_func）内对全局变量使用了一份先前状态的copy(输入函数时)， 导致出问题 
 
 ## 测试结论：
 * IC Blockchain 函数内await后会释放全局变量写锁。 [官方文档说明, WARNNING 部分](https://sdk.dfinity.org/docs/language-guide/actors-async.html#_using_await_to_consume_async_futures)
