@@ -32,12 +32,12 @@
 * vpn : expressvpn（可能影响网络传输时间 所以在shell命令中打印了attack / block命令的执行时间）
 
 测试结果
-attack 2021-10-15 22:41:42.484
-(0 : int)
-attack 2021-10-15 22:41:46.483
-block 2021-10-15 22:41:42.480
-(8 : int)
-block 2021-10-15 22:41:45.839
-(8 : int)
-xx@xxx:security/security$ dfx canister --network ic call main getVal
-(8 : int)
+* attack 2021-10-15 22:41:42.484
+* (0 : int)
+* attack 2021-10-15 22:41:46.483
+* block 2021-10-15 22:41:42.480
+* (8 : int)
+* block 2021-10-15 22:41:45.839
+* (8 : int)
+* eval : dfx canister --network ic call main getVal
+* (8 : int)
