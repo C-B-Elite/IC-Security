@@ -22,9 +22,9 @@ actor {
     *       最后将新的变量赋值给全局变量
     */
     public shared(msg) func block_func() : async Int{
-        let preVal = globalVar;
+        //let preVal = globalVar;
         // globalVar should be
-        globalVar := preVal + (await callee.block_func());
+        globalVar += (await callee.block_func());
         globalVar
     };
 
