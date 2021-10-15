@@ -3,15 +3,16 @@
 写的代码模拟的是存钱-取钱系统的攻击：
 利用的原理是： IC Blockchain：  shared函数（函数1）进行await时会暂时挂起，同时释放函数体内全局变量的写锁。其他函数可以修改其使用的全局变量。
 
-模拟攻击Canister环境：
+## 模拟攻击Canister环境：
 本金500
 先存钱 100， 存钱函数await另外的canister， 存钱函数挂起。
 取钱 500， 取钱函数不await，执行后返回
 
-测试结果：
-全局变量的执行结果以最后执行完的函数结果来定，而不是根据调用时间来定。
+## 测试结论：
+* IC Blockchain 函数内await后会释放全局变量写锁。 [官方文档说明, WARNNING 部分](https://sdk.dfinity.org/docs/language-guide/actors-async.html#_using_await_to_consume_async_futures)
+* 全局变量的执行结果以最后执行完的函数结果来定，而不是根据调用时间来定。
 
-建议：
+## 建议：
 资产敏感类函数调用后需要用assert来判断全局变量值是否和预期一样。
 
 * 需要下载Parallel 包
