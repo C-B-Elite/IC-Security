@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "security": {
+      "main": "src/security/main.mo",
+      "type": "motoko"
+    },
+    "security_assets": {
+      "dependencies": [
+        "security"
+      ],
+      "frontend": {
+        "entrypoint": "src/security_assets/src/index.html"
+      },
+      "source": [
+        "src/security_assets/assets",
+        "dist/security_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
