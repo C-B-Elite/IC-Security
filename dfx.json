@@ -1,21 +1,16 @@
 {
   "canisters": {
-    "security": {
+    "main": {
       "main": "src/security/main.mo",
       "type": "motoko"
     },
-    "security_assets": {
-      "dependencies": [
-        "security"
-      ],
-      "frontend": {
-        "entrypoint": "src/security_assets/src/index.html"
-      },
-      "source": [
-        "src/security_assets/assets",
-        "dist/security_assets/"
-      ],
-      "type": "assets"
+    "callee": {
+      "main": "src/security/canister.mo",
+      "type": "motoko"
+    },
+    "caller": {
+      "main": "src/security/caller.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
